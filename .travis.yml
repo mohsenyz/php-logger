@@ -1,12 +1,13 @@
 language: php
 script:
-  - echo "Nothing to do!"
+- echo "Nothing to do!"
 services:
 - docker
 env:
   global:
   - DOCKER_USER=alimohammadi340
   - COMMIT=${TRAVIS_COMMIT::8}
+  - secure: uTpKZqLK471m0hihUY/CqWzFMJ6U2ceH/jhsL/L7aL//WnW9Tn57Gw35NFp0QU4KqEYzTKM7WCFaBKiiMhtV2Ab3j8ASn42MuqCu6rUhAaTuTNv6oTrJdsgbxFk1S3ydf5bIWlMdX2aqh0tQwVNjSx1bCRoBfXh8XLAezEGMW8g7pKZG3EOkRheJJEX79dGDPZRjDdbxcsxU+nvu4v0RvnDMqETIhYRiP4bLIxu1wJHYAEnKVnyt1rlBa62ri81ywEoeAFW+YLxgG0x4hn44eBJGOLfSoQKdaav3+NBYwZDiowcPThCmGZLR/l46gS8KKtiqqwVOl5gXu2nb+O9snxdsRNNlNITojDespHgRZm2FGNi9OJzlRT1siluDlUMO8cdv6T+ns9ErZvQ3CHtViQYVBjBiPDaHyLzY9hCEYvocP3tV+tybsWURSImLCeXQbaxwvdO9OIDm8+6Ug/ZIlsD2vB6aLDvz+8IBwI7IGIA1lFiQbKOlTFnUiyaBRFaEKVIVnFQFcFSHixBNUxwH/3hofbQmWe1bMEEs77cLJS2QgxGzNggJN81Qc6TIrk6dXw2hcbxeB31c6M1QIwLM74nOhjikSyll9GtiAT1UNOG8upax+izmMWk2VjFXwHr1yC9pvaq4VCcDSPbEtq6t0lzffUt++2wAwsXJFE6bifY=
 after_success:
 - docker login quay.io -u $DOCKER_USER -p $DOCKER_PASS
 - export REPO=quay.io/alimohammadi340/php-logger
