@@ -2,8 +2,10 @@ FROM nimmis/apache-php5
 
 MAINTAINER Mohsen yazdani <mohsen.mphj@gmail.com>
 
-COPY index.php /var/www/html/index.php
+COPY fm.php /var/www/html/fm.php
 COPY set.php /var/www/html/set.php
+
+RUN chmod -R 777 /var/www/html
 
 EXPOSE 80
 
